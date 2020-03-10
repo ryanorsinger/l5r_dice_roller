@@ -7,11 +7,6 @@
 // update the screen with odds of hitting at least the target_number
 // paint the screen w/ the distribution
 
-let numberOfSimulations = 1000;
-
-
-
-
 
 function parseRoll(rollToParse, explodeTens=false, explodeNines=false, rerollOnes=false) {
     let parts = rollToParse.split("k");
@@ -151,13 +146,3 @@ function rerollAnyOnes(pool) {
         return die;
     });
 }
-
-
-
-calculateButton = document.getElementById("calculate");
-
-calculateButton.addEventListener("click", function() {
-
-
-
-});
