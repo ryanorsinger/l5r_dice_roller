@@ -10,7 +10,9 @@ function mean(values) {
 }
 
 function median(values){
-    if(values.length ===0) return 0;
+    if(values.length === 0) {
+        return 0;
+    }
 
     values.sort(function(a,b){
         return a-b;
@@ -19,10 +21,11 @@ function median(values){
     var half = Math.floor(values.length / 2);
 
     // if the number of items is odd, then return the middle item
-    if (values.length % 2) {
+    if (values.length % 2 != 0) {
         return values[half];
     }
 
+    // for an even number of values, average the two middle
     return (values[half - 1] + values[half]) / 2.0;
 }
 
@@ -118,6 +121,22 @@ function compareAllToTarget(allRolls) {
     // document.querySelector("#max > span").innerText = max;
     // document.querySelector("#min > span").innerText = min;
     // document.querySelector("#range > span").innerText = max - min;
+    
+    var layout = {
+        bargap: 0.05, 
+        bargroupgap: 0.2, 
+        barmode: "overlay", 
+        title: "Distribution of Rolls", 
+        xaxis: {title: "Value"}, 
+        yaxis: {title: "Count"}
+      };
+    
+    var trace = {
+        x: allRolls,
+        type: 'histogram',
+    };
+    var data = [trace];
+    Plotly.newPlot('histogram', data, layout);
 }
 
 
