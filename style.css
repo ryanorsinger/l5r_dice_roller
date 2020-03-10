@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: helvetica, arial, sans-serif;
+    margin: 2em;
+  }
+  
+  h1 {
+    font-style: italic;
+    color: #373fff;
+  }
+    
+  /* section > button {
+  /*   padding: 0.3em; */
+    margin: 0.3em;
+    font-family: monospace;
+  } */
+  
+/*   
+  button:focus {
+    background-color:grey;
+    color:white;
+  } */
+
+
+  .radio-toolbar {
+    margin: 10px;
+  }
+  
+  .radio-toolbar input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+  }
+  
+  .radio-toolbar label {
+      display: inline-block;
+      background-color: #ddd;
+      padding: 10px 20px;
+      font-family: sans-serif, Arial;
+      font-size: 16px;
+      border: 2px solid #444;
+      border-radius: 4px;
+  }
+  
+  .radio-toolbar label:hover {
+    background-color: #dfd;
+  }
+  
+  .radio-toolbar input[type="radio"]:focus + label {
+      border: 2px dashed #444;
+  }
+  
+  .radio-toolbar input[type="radio"]:checked + label {
+      background-color: #bfb;
+      border-color: #4c4;
+  }

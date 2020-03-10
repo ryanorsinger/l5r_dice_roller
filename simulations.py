@@ -40,3 +40,4 @@ target_number = 55
 
 # This cal
 p_rolling_higher_than_target = (rolls > target_number).sum() / len(rolls)
+print(f"Probability of rolling higher than {target_number} with {incoming_roll} is %{p_rolling_higher_than_target*100}")
