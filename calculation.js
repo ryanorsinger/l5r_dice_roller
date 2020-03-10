@@ -1,12 +1,17 @@
 "use strict";
 
+// Once everything to parse and make a roll is done...
+// simulate n_rolls to produce a distribution
+// return % of values above the target_number
+// paint the screen w/ 
+
 function parseRoll(rollToParse, explodeTens=false, explodeNines=false, rerollOnes=false) {
     let parts = rollToParse.split("k");
     
     const numberRolled = parseInt(parts[0]);
     const keep = parseInt(parts[1]);
 
-    // simulate n_rolls...
+    
     return makeRoll(numberRolled, keep, explodeTens, explodeNines, rerollOnes ) 
 }
 
@@ -39,27 +44,18 @@ function makeRoll(numberRolled, keep, explodeTens, explodeNines, rerollOnes) {
  */
 function handleCases(pool, explodeTens, explodeNines, rerollOnes) {
     
+    // Rerolling ones, by game mechanics, only happens on the first dice pool. Successive ones do not reroll.
+    if(rerollOnes && pool.includes(1)) {
+        pool = rerollAnyOnes(pool);
+    }
 
-    // // emphasis to reroll any first occurences of ones, explode any and all occurences of 9s or 10s
-    // if(rerollOnes && explodeTens && explodeNines) {
-        
+    if(explodeTens && explodeTens) {
+        pool = explodeBothNinesAndTens(pool);
+    } else if(explodeTens) {
+        pool = explodeOnlyTens(pool);    
+    } 
 
-    // // emphasis to reroll any first occurences of ones and explode any and all tens 
-    // } else if(rerollOnes && explodeTens) {
-
-
-    // } else if(explodeTens && explodeNines) {
-
-    // } 
-
-    // // explode both tens and nines together (because a 9 that explo eachother)
-    // // explode tens if only tens
-    // // because of game mechanics, we won't explode 9s unless we're already exploding 10s
-    // if(explodeTens && explodeNines && (pool.contains(10) || pool.contains(9))) {
-    //     pool = rollExplodingNinesAndTens(pool);
-    // } else if(explodeTens && pool.contains(10)) {
-    //     pool = rollExplodingTens(pool);
-    // } 
+    return pool;
 }
 
 
@@ -90,11 +86,11 @@ function rollPool(numberRolled) {
     return pool;
 }
 
-function rerollOnes(pool) {
-    pool = pool.map(die => {
+function rerollAnyOnes(pool) {
+    return pool.map(die => {
         if(die == 1) {
             die = rollDie();
         }
+        return die;
     });
-    return pool;
 }
