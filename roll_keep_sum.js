@@ -7,16 +7,6 @@
 // update the screen with odds of hitting at least the target_number
 // paint the screen w/ the distribution
 
-
-function parseRoll(rollToParse, explodeTens=false, explodeNines=false, rerollOnes=false) {
-    let parts = rollToParse.split("k");
-    
-    const numberRolled = parseInt(parts[0]);
-    const keep = parseInt(parts[1]);
-    
-    // return makeRoll(numberRolled, keep, explodeTens, explodeNines, rerollOnes ) 
-}
-
 function makeRoll(numberRolled, keep, explodeTens, explodeNines, rerollOnes) {
     
     // roll the original roll pool

@@ -213,17 +213,21 @@
                 </section>
                 <button id="calculate">Calculate Roll Probabilities</button>
                 <label for="simulations">Number of Simulated Rolls</label>
-                <input type="number" id="simulations" name="simulations" value=1000>
+                <input type="number" id="simulations" name="simulations" value=100000>
             </form>
         </section>
         <section id="output">
             <h2>% Chance to Beat Target Number:&nbsp;<span></span></h2>
-            <h2>Odds of beating the TN:&nbsp;<span></span></h2>  
+            <!-- <h2>Odds of beating the TN:&nbsp;<span></span></h2> bring this in later  -->
             
             <h4 id="mean">Mean:&nbsp;<span></span></h4>
             <h4 id="median">Median:&nbsp;<span></span></h4>
-            <h4 id="stdev">Std Dev:&nbsp;<span></span></h4>
-            <h4 id="range">Range:&nbsp;<span></span></h4>
+            
+            <!-- TODO: Bring these next items to functionality -->
+            <!-- <h4 id="stdev">Std Dev:&nbsp;<span></span></h4>
+            <h4 id="max">Max:&nbsp;<span></span></h4>
+            <h4 id="min">min:&nbsp;<span></span></h4>
+            <h4 id="range">Range:&nbsp;<span></span></h4> -->
 
         </section>
     </main>
@@ -232,10 +236,10 @@
     <footer>
         Copyright &copy; 2020 Ryan Orsinger. All rights reserved.
     </footer>
-            
-                
+
+              
          
-        <script src="./calculation.js"></script>
-        <script src="./interface.js"></script>
+    <script src="./roll_keep_sum.js"></script>
+    <script src="./interface.js"></script>
 </body>
 </html>
