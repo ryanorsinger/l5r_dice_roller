@@ -8,8 +8,10 @@ function updateTargetNumber(val) {
 
     if (document.getElementById('points').value != val) {
         document.getElementById('points').value = val;
-    } 
-     
+    }
 }
+
+
+
 
 

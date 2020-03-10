@@ -7,15 +7,20 @@
 // update the screen with odds of hitting at least the target_number
 // paint the screen w/ the distribution
 
+let numberOfSimulations = 1000;
+
+
+
+
+
 function parseRoll(rollToParse, explodeTens=false, explodeNines=false, rerollOnes=false) {
     let parts = rollToParse.split("k");
     
     const numberRolled = parseInt(parts[0]);
     const keep = parseInt(parts[1]);
     
-    return makeRoll(numberRolled, keep, explodeTens, explodeNines, rerollOnes ) 
+    // return makeRoll(numberRolled, keep, explodeTens, explodeNines, rerollOnes ) 
 }
-
 
 function makeRoll(numberRolled, keep, explodeTens, explodeNines, rerollOnes) {
     
@@ -147,3 +152,12 @@ function rerollAnyOnes(pool) {
     });
 }
 
+
+
+calculateButton = document.getElementById("calculate");
+
+calculateButton.addEventListener("click", function() {
+
+
+
+});

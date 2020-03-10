@@ -1,59 +1,81 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: helvetica, arial, sans-serif;
-    margin: 2em;
-  }
-  
-  h1 {
-    font-style: italic;
-    color: #373fff;
-  }
-    
-  /* section > button {
-  /*   padding: 0.3em; */
-    margin: 0.3em;
-    font-family: monospace;
-  } */
-  
-/*   
-  button:focus {
-    background-color:grey;
-    color:white;
-  } */
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+  background-color: papayawhip;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+#dice > div {
+  margin: .4em;
+}
 
 
-  .radio-toolbar {
-    margin: 10px;
-  }
-  
-  .radio-toolbar input[type="radio"] {
-    opacity: 0;
-    position: fixed;
-    width: 0;
-  }
-  
-  .radio-toolbar label {
-      display: inline-block;
-      background-color: #ddd;
-      padding: 10px 20px;
-      font-family: sans-serif, Arial;
-      font-size: 16px;
-      border: 2px solid #444;
-      border-radius: 4px;
-  }
-  
-  .radio-toolbar label:hover {
-    background-color: #dfd;
-  }
-  
-  .radio-toolbar input[type="radio"]:focus + label {
-      border: 2px dashed #444;
-  }
-  
-  .radio-toolbar input[type="radio"]:checked + label {
-      background-color: #bfb;
-      border-color: #4c4;
-  }
+h1 {
+  font-style: italic;
+  color: #373fff;
+}
+
+.radio-toolbar {
+  margin: 10px;
+}
+
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-toolbar label {
+    display: inline-block;
+    background-color: #ddd;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #444;
+    border-radius: 4px;
+}
+
+.radio-toolbar label:hover {
+  background-color: #dfd;
+}
+
+.radio-toolbar input[type="radio"]:focus + label {
+    border: 2px dashed #444;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+    background-color: #bfb;
+    border-color: #4c4;
+}
+
+#calculate {
+  font-size: 1.5em;
+  margin: 1em;
+  height: 3em;
+}
+
+
+#numbers {
+  font-size: 1.5em;
+}
+
+#numbers input {
+  font-size: 1em;
+}
+
+#output {
+  background-color: burlywood; 
+  margin: .5em;
+  padding: 1em;
+  border: 1px solid salmon;
+}
+

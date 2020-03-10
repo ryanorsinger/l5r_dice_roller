@@ -8,216 +8,231 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <section id="top">
-        <div class="inputs">
-            <form>
-                <label for="points">Target Number (between 1 and 100):</label>
-                <input type="range" id="points" name="points" min="1" max="100" oninput="updateTargetNumber(this.value)">
-                <br>
-                <label for="target_number">Target Number:</label>
-                <input type="number" id="target_number" name="target_number" oninput="updateTargetNumber(this.value)">
-                
-                <!-- maybe add these +-5 buttons later for adding/removing raises -->
-                <!-- <button>Add 5</button><button>Subtract 5</button> -->
+    <header>
+        <h1>L5R Dice Roll Probability Calculator</h1>
+        <!-- <img src="./l5r_rings.png" alt="Legends of the Five Rings Logo" width="80"> -->
+    </header>
+    <main>
+        <section id="input">
+            <form action="#">
+                <section id="dice" class="radio-toolbar">
+                    <div class="ten">
+                        <input type="radio" id="10k10" name="dice_pool" value="10k10">
+                        <label for="10k10">10k10</label>
+        
+                        <input type="radio" id="10k9" name="dice_pool" value="10k9">
+                        <label for="10k9">10k9</label>
+        
+                        <input type="radio" id="10k8" name="dice_pool" value="10k8">
+                        <label for="10k8">10k8</label>
+                        
+                        <input type="radio" id="10k7" name="dice_pool" value="10k7">
+                        <label for="10k7">10k7</label>
+        
+                        <input type="radio" id="10k6" name="dice_pool" value="10k6">
+                        <label for="10k6">10k6</label>
+        
+                        <input type="radio" id="10k5" name="dice_pool" value="10k5">
+                        <label for="10k5">10k5</label>
+        
+                        <input type="radio" id="10k4" name="dice_pool" value="10k4">
+                        <label for="10k4">10k4</label>
+        
+                        <input type="radio" id="10k3" name="dice_pool" value="10k3">
+                        <label for="10k3">10k3</label>
+        
+                        <input type="radio" id="10k2" name="dice_pool" value="10k2">
+                        <label for="10k2">10k2</label>
+        
+                        <input type="radio" id="10k1" name="dice_pool" value="10k1">
+                        <label for="10k1">10k1</label>
+                    </div>
+                    <div class="nine">
+                        <input type="radio" id="9k9" name="dice_pool" value="9k9">
+                        <label for="9k9">9k9</label>
+        
+                        <input type="radio" id="9k8" name="dice_pool" value="9k8">
+                        <label for="9k8">9k8</label>
+                        
+                        <input type="radio" id="9k7" name="dice_pool" value="9k7">
+                        <label for="9k7">9k7</label>
+        
+                        <input type="radio" id="9k6" name="dice_pool" value="9k6">
+                        <label for="9k6">9k6</label>
+        
+                        <input type="radio" id="9k5" name="dice_pool" value="9k5">
+                        <label for="9k5">9k5</label>
+        
+                        <input type="radio" id="9k4" name="dice_pool" value="9k4">
+                        <label for="9k4">9k4</label>
+        
+                        <input type="radio" id="9k3" name="dice_pool" value="9k3">
+                        <label for="9k3">9k3</label>
+        
+                        <input type="radio" id="9k2" name="dice_pool" value="9k2">
+                        <label for="9k2">9k2</label>
+        
+                        <input type="radio" id="9k1" name="dice_pool" value="9k1">
+                        <label for="9k1">9k1</label>                
+                    </div>
+                    <div class="eight">
+                        <input type="radio" id="8k8" name="dice_pool" value="8k8">
+                        <label for="8k8">8k8</label>
+                        
+                        <input type="radio" id="8k7" name="dice_pool" value="8k7">
+                        <label for="8k7">8k7</label>
+        
+                        <input type="radio" id="8k6" name="dice_pool" value="8k6">
+                        <label for="8k6">8k6</label>
+        
+                        <input type="radio" id="8k5" name="dice_pool" value="8k5">
+                        <label for="8k5">8k5</label>
+        
+                        <input type="radio" id="8k4" name="dice_pool" value="8k4">
+                        <label for="8k4">8k4</label>
+        
+                        <input type="radio" id="8k3" name="dice_pool" value="8k3">
+                        <label for="8k3">8k3</label>
+        
+                        <input type="radio" id="8k2" name="dice_pool" value="8k2">
+                        <label for="8k2">8k2</label>
+        
+                        <input type="radio" id="8k1" name="dice_pool" value="8k1">
+                        <label for="8k1">8k1</label>
+                    </div>
+                    <div class="seven">
+                        <input type="radio" id="7k7" name="dice_pool" value="7k7">
+                        <label for="7k7">7k7</label>
+        
+                        <input type="radio" id="7k6" name="dice_pool" value="7k6">
+                        <label for="7k6">7k6</label>
+        
+                        <input type="radio" id="7k5" name="dice_pool" value="7k5">
+                        <label for="7k5">7k5</label>
+        
+                        <input type="radio" id="7k4" name="dice_pool" value="7k4">
+                        <label for="7k4">7k4</label>
+        
+                        <input type="radio" id="7k3" name="dice_pool" value="7k3">
+                        <label for="7k3">7k3</label>
+        
+                        <input type="radio" id="7k2" name="dice_pool" value="7k2">
+                        <label for="7k2">7k2</label>
+        
+                        <input type="radio" id="7k1" name="dice_pool" value="7k1">
+                        <label for="7k1">7k1</label>
+                    </div>
+                    <div class="six">
+                        <input type="radio" id="6k6" name="dice_pool" value="6k6">
+                        <label for="6k6">6k6</label>
+        
+                        <input type="radio" id="6k5" name="dice_pool" value="6k5">
+                        <label for="6k5">6k5</label>
+        
+                        <input type="radio" id="6k4" name="dice_pool" value="6k4">
+                        <label for="6k4">6k4</label>
+        
+                        <input type="radio" id="6k3" name="dice_pool" value="6k3">
+                        <label for="6k3">6k3</label>
+        
+                        <input type="radio" id="6k2" name="dice_pool" value="6k2">
+                        <label for="6k2">6k2</label>
+        
+                        <input type="radio" id="6k1" name="dice_pool" value="6k1">
+                        <label for="6k1">6k1</label>
+                    </div>
+                    <div class="five">
+                        <input type="radio" id="5k5" name="dice_pool" value="5k5">
+                        <label for="5k5">5k5</label>
+        
+                        <input type="radio" id="5k4" name="dice_pool" value="5k4">
+                        <label for="5k4">5k4</label>
+        
+                        <input type="radio" id="5k3" name="dice_pool" value="5k3">
+                        <label for="5k3">5k3</label>
+        
+                        <input type="radio" id="5k2" name="dice_pool" value="5k2">
+                        <label for="5k2">5k2</label>
+        
+                        <input type="radio" id="5k1" name="dice_pool" value="5k1">
+                        <label for="5k1">5k1</label>
+                    </div>
+                    <div class="four">
+                        <input type="radio" id="4k4" name="dice_pool" value="4k4">
+                        <label for="4k4">4k4</label>
+        
+                        <input type="radio" id="4k3" name="dice_pool" value="4k3">
+                        <label for="4k3">4k3</label>
+        
+                        <input type="radio" id="4k2" name="dice_pool" value="4k2">
+                        <label for="4k2">4k2</label>
+        
+                        <input type="radio" id="4k1" name="dice_pool" value="4k1">
+                        <label for="4k1">4k1</label>
+                    </div>
+                    <div class="three">
+                        <input type="radio" id="3k3" name="dice_pool" value="3k3">
+                        <label for="3k3">3k3</label>
+        
+                        <input type="radio" id="3k2" name="dice_pool" value="3k2">
+                        <label for="3k2">3k2</label>
+        
+                        <input type="radio" id="3k1" name="dice_pool" value="3k1">
+                        <label for="3k1">3k1</label>
+                    </div>
+                    <div class="two">
+                        <input type="radio" id="2k2" name="dice_pool" value="2k2">
+                        <label for="2k2">2k2</label>
+        
+                        <input type="radio" id="2k1" name="dice_pool" value="2k1">
+                        <label for="2k1">2k1</label>
+                    </div>
+                    <div class="one">
+                        <input type="radio" id="1k1" name="dice_pool" value="1k1">
+                        <label for="1k1">1k1</label>
+                    </div>
+                </section>
+                <hr>  
+                <section id="numbers">
+                    <label for="points">Target Number (between 1 and 100):</label>
+                    <input type="range" id="points" name="points" min="1" max="100" oninput="updateTargetNumber(this.value)">
+                    <br>
+                    <label for="target_number">Target Number:</label>
+                    <input type="number" id="target_number" name="target_number" oninput="updateTargetNumber(this.value)">
+                    <br>
+                    
+                    <label for="tens">10s explode
+                        <input type="checkbox" name="tens" id="tens">
+                    </label>
+                    <br>
+                    <label for="nines">9s explode&nbsp;<input type="checkbox" id="nines" name="nines">
+                    </label>
+                    <br>  
+                    <label for="ones">reroll 1s &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="ones" name="ones">
+                    </label>
+                </section>
+                <button id="calculate">Calculate Roll Probabilities</button>
+            </form>
+        </section>
+        <section id="output">
+            <h2>% Chance to Beat Target Number:&nbsp;<span></span></h2>
+            <h2>Odds of beating the TN:&nbsp;<span></span></h2>  
             
-                <br>
-                <label>10s explode
-                <input type="checkbox" name="tens" >
-                </label>
-                <br>
-                <label>9s explode
-                    <input type="checkbox">
-                </label>
-                <br>  
-                <label>reroll 1s
-                    <input type="checkbox">
-                </label>
-                <hr>
-        </div>
-        <div class="outputs">
+            <h4 id="mean">Mean:&nbsp;<span></span></h4>
+            <h4 id="median">Median:&nbsp;<span></span></h4>
+            <h4 id="stdev">Std Dev:&nbsp;<span></span></h4>
+            <h4 id="range">Range:&nbsp;<span></span></h4>
 
-        </div>
-    </section>
-        <section id="dice" class="radio-toolbar">
-            <div class="ten">
-                <input type="radio" id="10k10" name="dice_pool" value="10k10">
-                <label for="10k10">10k10</label>
+        </section>
+    </main>
 
-                <input type="radio" id="10k9" name="dice_pool" value="10k9">
-                <label for="10k9">10k9</label>
 
-                <input type="radio" id="10k8" name="dice_pool" value="10k8">
-                <label for="10k8">10k8</label>
+    <footer>
+        Copyright &copy; 2020 Ryan Orsinger. All rights reserved.
+    </footer>
+            
                 
-                <input type="radio" id="10k7" name="dice_pool" value="10k7">
-                <label for="10k7">10k7</label>
-
-                <input type="radio" id="10k6" name="dice_pool" value="10k6">
-                <label for="10k6">10k6</label>
-
-                <input type="radio" id="10k5" name="dice_pool" value="10k5">
-                <label for="10k5">10k5</label>
-
-                <input type="radio" id="10k4" name="dice_pool" value="10k4">
-                <label for="10k4">10k4</label>
-
-                <input type="radio" id="10k3" name="dice_pool" value="10k3">
-                <label for="10k3">10k3</label>
-
-                <input type="radio" id="10k2" name="dice_pool" value="10k2">
-                <label for="10k2">10k2</label>
-
-                <input type="radio" id="10k1" name="dice_pool" value="10k1">
-                <label for="10k1">10k1</label>
-            </div>
-            <div class="nine">
-                <input type="radio" id="9k9" name="dice_pool" value="9k9">
-                <label for="9k9">9k9</label>
-
-                <input type="radio" id="9k8" name="dice_pool" value="9k8">
-                <label for="9k8">9k8</label>
-                
-                <input type="radio" id="9k7" name="dice_pool" value="9k7">
-                <label for="9k7">9k7</label>
-
-                <input type="radio" id="9k6" name="dice_pool" value="9k6">
-                <label for="9k6">9k6</label>
-
-                <input type="radio" id="9k5" name="dice_pool" value="9k5">
-                <label for="9k5">9k5</label>
-
-                <input type="radio" id="9k4" name="dice_pool" value="9k4">
-                <label for="9k4">9k4</label>
-
-                <input type="radio" id="9k3" name="dice_pool" value="9k3">
-                <label for="9k3">9k3</label>
-
-                <input type="radio" id="9k2" name="dice_pool" value="9k2">
-                <label for="9k2">9k2</label>
-
-                <input type="radio" id="9k1" name="dice_pool" value="9k1">
-                <label for="9k1">9k1</label>                
-            </div>
-            <div class="eight">
-                <input type="radio" id="8k8" name="dice_pool" value="8k8">
-                <label for="8k8">8k8</label>
-                
-                <input type="radio" id="8k7" name="dice_pool" value="8k7">
-                <label for="8k7">8k7</label>
-
-                <input type="radio" id="8k6" name="dice_pool" value="8k6">
-                <label for="8k6">8k6</label>
-
-                <input type="radio" id="8k5" name="dice_pool" value="8k5">
-                <label for="8k5">8k5</label>
-
-                <input type="radio" id="8k4" name="dice_pool" value="8k4">
-                <label for="8k4">8k4</label>
-
-                <input type="radio" id="8k3" name="dice_pool" value="8k3">
-                <label for="8k3">8k3</label>
-
-                <input type="radio" id="8k2" name="dice_pool" value="8k2">
-                <label for="8k2">8k2</label>
-
-                <input type="radio" id="8k1" name="dice_pool" value="8k1">
-                <label for="8k1">8k1</label>
-            </div>
-            <div class="seven">
-                <input type="radio" id="7k7" name="dice_pool" value="7k7">
-                <label for="7k7">7k7</label>
-
-                <input type="radio" id="7k6" name="dice_pool" value="7k6">
-                <label for="7k6">7k6</label>
-
-                <input type="radio" id="7k5" name="dice_pool" value="7k5">
-                <label for="7k5">7k5</label>
-
-                <input type="radio" id="7k4" name="dice_pool" value="7k4">
-                <label for="7k4">7k4</label>
-
-                <input type="radio" id="7k3" name="dice_pool" value="7k3">
-                <label for="7k3">7k3</label>
-
-                <input type="radio" id="7k2" name="dice_pool" value="7k2">
-                <label for="7k2">7k2</label>
-
-                <input type="radio" id="7k1" name="dice_pool" value="7k1">
-                <label for="7k1">7k1</label>
-            </div>
-            <div class="six">
-                <input type="radio" id="6k6" name="dice_pool" value="6k6">
-                <label for="6k6">6k6</label>
-
-                <input type="radio" id="6k5" name="dice_pool" value="6k5">
-                <label for="6k5">6k5</label>
-
-                <input type="radio" id="6k4" name="dice_pool" value="6k4">
-                <label for="6k4">6k4</label>
-
-                <input type="radio" id="6k3" name="dice_pool" value="6k3">
-                <label for="6k3">6k3</label>
-
-                <input type="radio" id="6k2" name="dice_pool" value="6k2">
-                <label for="6k2">6k2</label>
-
-                <input type="radio" id="6k1" name="dice_pool" value="6k1">
-                <label for="6k1">6k1</label>
-            </div>
-            <div class="five">
-                <input type="radio" id="5k5" name="dice_pool" value="5k5">
-                <label for="5k5">5k5</label>
-
-                <input type="radio" id="5k4" name="dice_pool" value="5k4">
-                <label for="5k4">5k4</label>
-
-                <input type="radio" id="5k3" name="dice_pool" value="5k3">
-                <label for="5k3">5k3</label>
-
-                <input type="radio" id="5k2" name="dice_pool" value="5k2">
-                <label for="5k2">5k2</label>
-
-                <input type="radio" id="5k1" name="dice_pool" value="5k1">
-                <label for="5k1">5k1</label>
-            </div>
-            <div class="four">
-                <input type="radio" id="4k4" name="dice_pool" value="4k4">
-                <label for="4k4">4k4</label>
-
-                <input type="radio" id="4k3" name="dice_pool" value="4k3">
-                <label for="4k3">4k3</label>
-
-                <input type="radio" id="4k2" name="dice_pool" value="4k2">
-                <label for="4k2">4k2</label>
-
-                <input type="radio" id="4k1" name="dice_pool" value="4k1">
-                <label for="4k1">4k1</label>
-            </div>
-            <div class="three">
-                <input type="radio" id="3k3" name="dice_pool" value="3k3">
-                <label for="3k3">3k3</label>
-
-                <input type="radio" id="3k2" name="dice_pool" value="3k2">
-                <label for="3k2">3k2</label>
-
-                <input type="radio" id="3k1" name="dice_pool" value="3k1">
-                <label for="3k1">3k1</label>
-            </div>
-            <div class="two">
-                <input type="radio" id="2k2" name="dice_pool" value="2k2">
-                <label for="2k2">2k2</label>
-
-                <input type="radio" id="2k1" name="dice_pool" value="2k1">
-                <label for="2k1">2k1</label>
-            </div>
-            <div class="one">
-                <input type="radio" id="1k1" name="dice_pool" value="1k1">
-                <label for="1k1">1k1</label>
-            </div>
-            </section>
-            <button>Calculate Roll Probabilities</button>
-        </form>
-
+         
         <script src="./interface.js"></script>
         <script src="./calculation.js"></script>
 </body>
