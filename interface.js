@@ -122,6 +122,26 @@ function compareAllToTarget(allRolls) {
     // document.querySelector("#min > span").innerText = min;
     // document.querySelector("#range > span").innerText = max - min;
     
+    addHistogramToPage(allRolls);
+    addBoxPlot(allRolls);
+}
+
+function addBoxPlot(allRolls) {
+    var trace = {
+        x: allRolls,
+        type: 'box',
+        name: 'All Rolls'
+      };
+      
+      var data = [trace];
+      
+      var layout = {
+        title: 'Quartiles and Outliers'
+      };
+      
+      Plotly.newPlot('boxplot', data, layout);
+}
+function addHistogramToPage(allRolls) {
     var layout = {
         bargap: 0.05, 
         bargroupgap: 0.2, 
