@@ -139,4 +139,17 @@ function compareAllToTarget(allRolls) {
     Plotly.newPlot('histogram', data, layout);
 }
 
+// To match game mechanics, ensure that both 9 and 10 become checked if 9 is checked.
+document.querySelector("#nines").addEventListener('change', function(e) {
+    let tens = document.querySelector("#tens");
+    if(tens.checked == false) {
+        tens.checked = true;
+    }
+});
 
+// To match game mechanics, ensure that both 9 and 10 become unchecked if 10 is un-checked while 9 is still checked.
+document.querySelector("#tens").addEventListener('change', function() {
+    if(document.querySelector("#nines").checked && document.querySelector("#tens").checked  == false) {
+        document.querySelector("#nines").checked = false;
+    }
+});
