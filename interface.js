@@ -104,8 +104,10 @@ function compareAllToTarget(allRolls) {
     console.log("total number of rolls is " + totalNumberOfRolls);
     console.log("total number of wins vs. target number is " + numberGreaterThanOrEqualToTarget);
 
+    // multiply by 100 to show percentage
+    probabilityOfBeatingTN = probabilityOfBeatingTN * 100;
+  
     // update the display to show the % chance of beating the target number given the number of simulations
-
     document.querySelector("#output > h2:nth-child(1) > span").innerText = probabilityOfBeatingTN;
     document.querySelector("#median > span").innerText = median(allRolls);
     document.querySelector("#mean > span").innerText = mean(allRolls);
